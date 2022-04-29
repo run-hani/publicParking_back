@@ -6,6 +6,7 @@ import db from './app/models/index.js'
 import api from "./app/routes/api.js"
 import basic from "./app/routes/basic.js"
 import user from "./app/routes/user.js"
+import board from "./app/routes/board.js"
 import index from "./app/routes/index.js"
 import getResponse from "./app/lambdas/getResponse.js"
 import applyPassport from './app/lambdas/applyPassport.js'
@@ -23,6 +24,7 @@ async function startServer() {
     app.use("/api", api);
     app.use("/basic", basic);
     app.use("/user", user);
+    app.use("/board", board);
     app.use(morgan('dev'))
     db
         .mongoose
