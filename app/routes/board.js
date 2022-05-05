@@ -32,8 +32,8 @@ app.post('/post/update', cors(corsOptions), (req, res) => {
   BoardService().update(req, res);
 })
 
-app.post('/post/:id', cors(corsOptions), (req, res) => {
+app.delete("/post/:id", cors(corsOptions), (req, res) => {
   BoardService().delete(req.params.id, res);
-})
+});
 
 export default app
